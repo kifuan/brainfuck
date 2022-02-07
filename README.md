@@ -1,40 +1,40 @@
 # Brainfuck
 
-[English README](README_EN.md)
+[中文README](README_CN.md)
 
-由Java简单代码实现的Brainfuck语言
+The brainfuck language implemented by simple java code.
 
-这是一个神奇的编程语言(以下拷贝自[Wikipedia](https://zh.wikipedia.org/wiki/Brainfuck))
+Here is the introduction of this funny language(Copied from [Wikipedia](https://wikipedia.org/wiki/Brainfuck))
 
-| 字符 | 含义                                                         |
-| ---- | ------------------------------------------------------------ |
-| `>`  | 指针加一                                                     |
-| `<`  | 指针减一                                                     |
-| `+`  | 指针指向的字节的值加一                                       |
-| `-`  | 指针指向的字节的值减一                                       |
-| `.`  | 输出指针指向的单元内容（ASCII码）                            |
-| `,`  | 输入内容到指针指向的单元（ASCII码）                          |
-| `[`  | 如果指针指向的单元值为零，向后跳转到对应的`]`指令的次一指令处 |
-| `]`  | 如果指针指向的单元值不为零，向前跳转到对应的`[`指令的次一指令处 |
+| Character | Meaning                                                      |
+| --------- | ------------------------------------------------------------ |
+| `>`       | Increment the data pointer (to point to the next cell to the right). |
+| `<`       | Decrement the data pointer (to point to the next cell to the left). |
+| `+`       | Increment (increase by one) the byte at the data pointer.    |
+| `-`       | Decrement (decrease by one) the byte at the data pointer.    |
+| `.`       | Output the byte at the data pointer(ASCII).                  |
+| `,`       | Accept one byte of input, storing its value in the byte at the data pointer(ASCII). |
+| `[`       | If the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it *forward* to the command after the *matching* `]` command. |
+| `]`       | If the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it *back* to the command after the *matching* `[` command. |
 
 
 
-## 例子
+## Examples
 
 ### Hello World!
 
-以下代码可打印出Hello World：
+The following program prints "Hello World!" and a newline to the screen:
 
 ```brainfuck
-++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.
+++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 ```
 
-### 条件指令
+### Conditional Instruction
 
-这个程序会把从键盘读来的小写字符转换成大写
+The following program will converts input characters to upper case:
 
 ```brainfuck
 ,----------[----------------------.,----------]
 ```
 
-更多的例子请见[Wikipedia](https://zh.wikipedia.org/wiki/Brainfuck)或[百度百科](https://baike.baidu.com/item/Brainfuck/1152785)
+Please go to [Wikipedia](https://wikipedia.org/wiki/Brainfuck) to see more examples.
